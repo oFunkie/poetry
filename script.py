@@ -33,3 +33,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
             print(f"Connexion reçue de {addr}")
             message = "\033c" + get_random_poem() + "\n"
             client.sendall(message.encode("utf-8"))
+            client.close()
